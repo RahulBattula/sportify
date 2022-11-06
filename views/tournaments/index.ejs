@@ -1,0 +1,24 @@
+<h2 class="page-header">Search Tournaments</h2>
+<form action="/tournaments" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Name</label>
+      <input type="text" name="name" value="<%= searchOptions.name %>">
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+<br>
+<% tournaments.forEach(tournament => { %>
+  <div class="tournament-row">
+    <div class="tournament-name"><%= tournament.name %></div>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="/tournaments/<%= tournament.id %>">View</a>
+      <a class="btn btn-primary" href="/tournaments/<%= tournament.id %>/edit">Edit</a>
+      <%- include('../partials/deleteForm',
+                  { url: `/tournaments/${tournament.id}` }) %>
+    </div>
+  </div>
+<% }) %>

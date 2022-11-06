@@ -1,0 +1,21 @@
+<h2 class="page-header"><%= player.title %></h2>
+<div class="player-details">
+  <div>
+    <img class="player-cover" src="<%= player.coverImagePath %>">
+    <div class="player-details-btn-grid">
+      <a class="btn btn-primary" href="/players/<%= player.id %>/edit">Edit</a>
+      <%- include('../partials/deleteForm', { url: `/players/${player.id}` }) %>
+      <a class="btn btn-primary player-details-tournament-button" href="/tournaments/<%= player.tournament.id %>">View Tournament</a>
+    </div>
+  </div>
+  <div class="player-details-grid">
+    <div class="player-details-label">Tournament:</div>
+    <div><%= player.tournament.name %></div>
+    <div class="player-details-label">Select Date:</div>
+    <div><%= player.selectDate.toDateString() %></div>
+    <div class="player-details-label">Prizes Won:</div>
+    <div><%= player.pageCount %></div>
+    <div class="player-details-label">Description:</div>
+    <div><%= player.description %></div>
+  </div>
+</div>

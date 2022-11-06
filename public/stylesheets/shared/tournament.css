@@ -1,0 +1,9 @@
+.tournament-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.tournament-name {
+  font-size: 1.5rem;
+}

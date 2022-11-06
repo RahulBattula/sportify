@@ -1,0 +1,60 @@
+:root {
+  --player-cover-width: 200px;
+  --player-cover-width-large: 325px;
+  --player-cover-aspect-ratio: 0.75;
+}
+
+.player-cover {
+  width: var(--player-cover-width);
+  height: calc(var(--player-cover-width) / var(--player-cover-aspect-ratio));
+}
+
+.player-cover-large {
+  --player-cover-width: var(--player-cover-width-large);
+}
+
+.player-grid {
+  display: grid;
+  justify-content: center;
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, var(--player-cover-width));
+}
+
+.player-grid-large {
+  grid-template-columns: repeat(auto-fill, var(--player-cover-width-large));
+}
+
+.player-details {
+  display: flex;
+}
+
+.player-details-label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  align-self: flex-start;
+}
+
+.player-details-grid {
+  display: grid;
+  align-content: flex-start;
+  align-items: center;
+  grid-gap: 1rem;
+  grid-template-columns: auto auto;
+}
+
+.player-details-btn-grid {
+  display: grid;
+  justify-items: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  grid-template-areas:
+    "edit delete"
+    "tournament tournament";
+  grid-gap: .5rem;
+  margin-top: .5rem;
+}
+
+.player-details-tournament-button {
+  grid-area: tournament;
+  justify-self: stretch;
+}

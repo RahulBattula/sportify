@@ -1,0 +1,9 @@
+<% playerCoverClass = locals.large ? 'player-cover-large' : '' %>
+<% playerGridClass = locals.large ? 'player-grid-large' : '' %>
+<div class="player-grid <%= playerGridClass %>">
+  <% players.forEach(player => { %>
+    <a href="/players/<%= player.id %>">
+      <img class="player-cover <%= playerCoverClass %>" src="<%= player.coverImagePath %>">
+    </a>
+  <% }) %>
+</div>

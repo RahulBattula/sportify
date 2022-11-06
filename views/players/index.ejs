@@ -1,0 +1,24 @@
+<h2 class="page-header">Search Player</h2>
+<form action="/players" method="GET">
+  <div class="form-row">
+    <div class="form-item">
+      <label>Title</label>
+      <input type="text" name="title" value="<%= searchOptions.title %>">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-item">
+      <label>Selected After</label>
+      <input type="date" name="selectedAfter" value="<%= searchOptions.selectedAfter %>">
+    </div>
+    <div class="form-item">
+      <label>Selected Before</label>
+      <input type="date" name="selectedBefore" value="<%= searchOptions.selectedBefore %>">
+    </div>
+  </div>
+  <div class="form-row form-row-end">
+    <button class="btn btn-primary" type="submit">Search</button>
+  </div>
+</form>
+<br>
+<%- include('../partials/playerGrid', { players: players, large: true }) %>

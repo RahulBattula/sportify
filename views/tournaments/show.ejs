@@ -1,0 +1,10 @@
+<h2 class="page-header"><%= tournament.name %></h2>
+<div class="btn-row">
+  <a class="btn btn-primary" href="/tournaments/<%= tournament.id %>/edit">Edit</a>
+  <%- include('../partials/deleteForm',
+              { url: `/tournaments/${tournament.id}` }) %>
+</div>
+<% if (playersByTournament.length > 0) { %>
+  <h2 class="page-header">Players By Tournament</h2>
+  <%- include('../partials/playerGrid', { players: playersByTournament }) %>
+<% } %>
